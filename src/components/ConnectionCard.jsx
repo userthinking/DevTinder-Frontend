@@ -1,7 +1,8 @@
 import React from "react";
+import { Link, useParams } from "react-router-dom";
 
 const ConnectionCard = ({ user }) => {
-  const { firstName, lastName, photoUrl, about} = user;
+  const { firstName, lastName, photoUrl, about } = user;
 
   return (
     <div className="card card-side bg-base-200 shadow-md w-96 flex-wrap">
@@ -17,12 +18,12 @@ const ConnectionCard = ({ user }) => {
           {firstName} {lastName}
         </h2>
 
-        {about && (
-          <p className="text-sm text-gray-400 line-clamp-2">{about}</p>
-        )}
+        {about && <p className="text-sm text-gray-400 line-clamp-2">{about}</p>}
 
         <div className="card-actions justify-end mt-auto">
-          <button className="btn btn-primary btn-sm">Chat</button>
+          <Link to={`/chat/${user._id}`}>
+            <button className="btn btn-primary btn-sm">Chat</button>
+          </Link>
         </div>
       </div>
     </div>

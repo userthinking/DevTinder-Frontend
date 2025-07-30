@@ -43,7 +43,7 @@ const Requests = () => {
   if (requests.length === 0) return <h1>No requests found</h1>;
 
   return (
-    <div className="flex flex-col gap-6 my-8 px-4 flex-wrap">
+    <div className="flex gap-6 my-8 px-4 flex-wrap">
       {requests.map((request) => (
         <RequestCard key={request.fromUserId._id} user={request.fromUserId} reviewRequests={reviewRequests} id={request._id} />
       ))}
